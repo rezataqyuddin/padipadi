@@ -1,0 +1,11 @@
+chr_number,mark_name,motifs,occurrence,start,end,mismatch,hr12_prod_size,ref_prod_size,npb,cult_93_11,tetep,tadukan
+Chr1_HR12,RM5646,AAG,15,20161302,20161360,1,59,101,Absent,Absent,Present,Present
+Chr1_HR12,RM6875,TGG,9,21398800,21398937,1,138,141,Absent,Absent,Present,Present
+Chr1_HR12,RM6666,TAA,8,27618316,27618481,1,166,157,Absent,Absent,Present,Present
+Chr1_HR12,RM8130,GT,31,21943807,21944126,1,320,291,Absent,Absent,Absent,Absent
+Chr1_HR12,RM8130,AT,30,21943807,21944126,1,320,291,Absent,Absent,Absent,Absent
+Chr1_HR12,RM7202,ATAG,8,22923664,22923816,1,153,157,Absent,Absent,Present,Present
+Chr1_HR12,RM3825,GA,21,31656234,31656390,1,157,147,Absent,Absent,Present,Present
+Chr1_HR12,RM3196,CT,12,27695636,27695835,1,200,198,Absent,Absent,Present,Present
+Chr1_HR12,RM6463,GCC,8,3671565,3671752,1,188,193,Absent,Absent,Present,Present
+Chr1_HR12,RM10226,AG,17,3202380,3202720,1,341,342,Absent,Absent,Present,Present
