@@ -2,7 +2,11 @@ library(RoughSets)
 
 ## Create a Decision Table from Dataset ##
 
-decision.table <- SF.asDecisionTable(read.csv("dataset/padi_cluster.csv"), 
+#ds = read.csv("dataset/rice_dataset_clusterd.csv", header = FALSE)
+ds = read.csv("dataset/rice_dataset_cl_discretized.csv", header = TRUE)
+summary(ds)
+
+decision.table <- SF.asDecisionTable(ds, 
                                      decision.attr = 14, 
                                      indx.nominal = NULL)
 
@@ -32,10 +36,11 @@ res.3 <- FS.DAAR.heuristic.reduct.RST(rice.discretized1)
 ## Feature selection using Heuristic Permutation ##
 res.4 <- FS.greedy.heuristic.reduct.RST(decision.table, qualityF = X.entropy,epsilon = 0.0)
 
-new.decTable <- SF.applyDecTable(rice.discretized1, single.reduct)
-new.decTable1 <- SF.applyDecTable(rice.discretized1, res.2)
+new.decTable <- SF.applyDecTable(decision.table, res.3)
+new.decTable1 <- SF.applyDecTable(decision.table, res.4)
 
 print(res.1)
-print(res.2)
+print(res.4)
 print(new.decTable)
 
+summary(res.4)

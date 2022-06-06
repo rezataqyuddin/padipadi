@@ -1,7 +1,5 @@
 ###################################################
 library(RoughSets)
-library(dplyr)
-
 ## Read Dataset
 dataset = read.csv("dataset/rice_dataset.csv")
 
@@ -9,6 +7,13 @@ dataset = read.csv("dataset/rice_dataset.csv")
 ## Data Prepocessing 
 ## 1. Check and Transform Missing Value
 ## 2. Encoding Categorical 
+
+dataset$npb = factor(dataset$npb,
+                         levels=c('Present','Absent'),
+                         labels=c('1','0'))
+dataset$cult_93_11 = factor(dataset$cult_93_11,
+                       levels=c('Present','Absent'),
+                       labels=c('1','0'))
 
 dataset$tadukan = factor(dataset$tadukan,
                          levels=c('Present','Absent'),
