@@ -1,7 +1,7 @@
 ###################################################
 library(RoughSets)
 ## Read Dataset
-dataset = read.csv("dataset/rice_dataset.csv")
+dataset = read.csv("dataset/motifs_cluster.csv")
 
 
 ## Data Prepocessing 
@@ -44,6 +44,7 @@ lapply(rice.discretized1, unique)
 control <- list(t.implicator = "lukasiewicz", type.relation = c("tolerance", "eq.1"),
                 m.owa = 3, type.aggregation = c("t.tnorm","lukasiewicz"))
 
+summary(decision.table)
 conditional.attr <- c(4,5,6,7,8,9);
 
 IND.A <- BC.IND.relation.RST(rice.discretized1, feature.set = conditional.attr)
@@ -72,4 +73,4 @@ res.1 <- BC.discernibility.mat.FRST(rice.discretized1, type.discernibility = "st
 reduct <- FS.all.reducts.computation(res.1)
 
 ## generate new decision table
-new.decTable <- SF.applyDecTable(decision.table, reduct, control = list(indx.reduct = 1))
+new.decTable <- SF.applyDecTable(decision.table, reduct)

@@ -3,11 +3,11 @@ library(RoughSets)
 ## Create a Decision Table from Dataset ##
 
 #ds = read.csv("dataset/rice_dataset_clusterd.csv", header = FALSE)
-ds = read.csv("dataset/rice_dataset_cl_discretized.csv", header = TRUE)
+ds = read.csv("dataset/motifs_cluster.csv", header = TRUE, sep = ';')
 summary(ds)
 
 decision.table <- SF.asDecisionTable(ds, 
-                                     decision.attr = 14, 
+                                     decision.attr = 1, 
                                      indx.nominal = NULL)
 
 ## Dataset conversion to Discretization using unsupervised.quantiles ##
@@ -31,13 +31,13 @@ single.reduct <- FS.quickreduct.RST(rice.discretized1)
 res.1 <- FS.permutation.heuristic.reduct.RST(rice.discretized1,  permutation = NULL)
 
 ## Feature selection using Heuristic Permutation ##
-res.3 <- FS.DAAR.heuristic.reduct.RST(rice.discretized1)
+#res.3 <- FS.DAAR.heuristic.reduct.RST(rice.discretized1)
 
 ## Feature selection using Heuristic Permutation ##
-res.4 <- FS.greedy.heuristic.reduct.RST(decision.table, qualityF = X.entropy,epsilon = 0.0)
+#res.4 <- FS.greedy.heuristic.reduct.RST(decision.table, qualityF = X.entropy,epsilon = 0.0)
 
-new.decTable <- SF.applyDecTable(decision.table, res.3)
-new.decTable1 <- SF.applyDecTable(decision.table, res.4)
+new.decTable <- SF.applyDecTable(decision.table, res.1)
+new.decTable1 <- SF.applyDecTable(decision.table, res.2)
 
 print(res.1)
 print(res.4)
